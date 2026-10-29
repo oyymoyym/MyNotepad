@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/copy.svg</file>
+        <file>img/cut.png</file>
+        <file>img/file-find.png</file>
+        <file>img/file-open.png</file>
+        <file>img/font.png</file>
+        <file>img/font.svg</file>
+        <file>img/miline_enum_line.png</file>
+        <file>img/note.png</file>
+        <file>img/parameter-replace.png</file>
+        <file>img/paste.png</file>
+        <file>img/print.png</file>
+        <file>img/redo.png</file>
+        <file>img/save.png</file>
+        <file>img/SaveAs.png</file>
+        <file>img/tool.png</file>
+        <file>img/undo.png</file>
+        <file>img/wrap.png</file>
+        <file>img/3状态栏.png</file>
+        <file>img/new.png</file>
+    </qresource>
+</RCC>
