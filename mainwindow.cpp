@@ -15,8 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
-
     textChanged=false;
     on_actionNew_triggered();
 
@@ -40,14 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QPlainTextEdit::LineWrapMode mode=ui->textEdit->lineWrapMode();
 
-    if(mode==QTextEdit::NoWrap){
-        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
-        ui->actionLineWrap->setChecked(true);
-    }
-    else{
-        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
-        ui->actionLineWrap->setChecked(false);
-    }
+    ui->actionLineWrap->setChecked(true);
     ui->actionToolbar->setChecked(true);
     ui->actionStatusBar->setChecked(true);
     ui->actionLNumber->setChecked(false);
@@ -98,6 +89,8 @@ void MainWindow::on_actionOpen_triggered()
         return;
 
     QString filename=QFileDialog::getOpenFileName(this,"打开文件",".",tr("Text file(*.txt);;All(*.*)"));
+    if (filename.isEmpty())
+        return;
     QFile file(filename);
 
     if(!file.open(QFile::ReadOnly|QFile::Text)){
@@ -108,7 +101,7 @@ void MainWindow::on_actionOpen_triggered()
 
     QTextStream in(&file);
     QString text=in.readAll();
-    ui->textEdit->insertPlainText(text);
+    ui->textEdit->setPlainText(text);
     file.close();
 
     this->setWindowTitle(QFileInfo(filename).absoluteFilePath());
