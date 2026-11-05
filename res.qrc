@@ -17,7 +17,7 @@
         <file>img/tool.png</file>
         <file>img/undo.png</file>
         <file>img/wrap.png</file>
-        <file>img/3状态栏.png</file>
         <file>img/new.png</file>
+        <file>img/sta.png</file>
     </qresource>
 </RCC>
