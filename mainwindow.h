@@ -72,6 +72,9 @@ private slots:
 
     void on_actionLNumber_triggered(bool checked);
 
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
 private:
     Ui::MainWindow *ui;
 

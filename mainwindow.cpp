@@ -8,6 +8,7 @@
 #include <QTextStream>
 #include <QColorDialog>
 #include <QFontDialog>
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -351,3 +352,13 @@ void MainWindow::on_actionLNumber_triggered(bool checked)
     ui->textEdit->hideLineNumberArea(!checked);
 }
 
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (userEditConfirmed()) {
+        event->accept();
+    }
+    else {
+        event->ignore();
+    }
+}
