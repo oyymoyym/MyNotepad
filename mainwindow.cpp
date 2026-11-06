@@ -113,19 +113,11 @@ void MainWindow::on_actionSave_triggered()
 {
     if(filePath==""){
         QString filename=QFileDialog::getSaveFileName(this,"保存文件",".",tr("Text file(*.txt)"));
-
-        QFile file(filename);
         if (filename.isEmpty())
             return;
-        if(!file.open(QFile::WriteOnly|QFile::Text)){
-            QMessageBox::warning(this,"..","打开保存文件失败");
-            return;
-        }
-        file.close();
-        filePath=filename;
+        filePath = filename;
     }
     QFile file(filePath);
-
     if(!file.open(QFile::WriteOnly|QFile::Text)){
         QMessageBox::warning(this,"..","打开保存文件失败");
         return;
